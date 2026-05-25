@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ANDA DALAM ANTRIAN - WESTLIFE 25</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WESTLIFE THE ANNIVERSARY WORLD TOUR</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,351 +17,429 @@
 
 body{
     background:#000;
-    color:#fff;
     font-family:'Poppins',sans-serif;
+    color:#fff;
     overflow-x:hidden;
 }
 
 /* BACKGROUND */
+
 body::before{
     content:'';
     position:fixed;
     inset:0;
     background:
-    radial-gradient(circle at top,#ff880020,transparent 40%),
-    radial-gradient(circle at bottom,#ff550015,transparent 40%),
+    radial-gradient(circle at top,#ff990020,transparent 40%),
+    radial-gradient(circle at bottom,#ff550010,transparent 40%),
     #000;
-    z-index:-2;
+    z-index:-3;
 }
 
 .stars{
     position:fixed;
     inset:0;
     background-image:
-    radial-gradient(#ffae00 1px, transparent 1px);
+    radial-gradient(#ff9900 1px, transparent 1px);
     background-size:40px 40px;
     opacity:.12;
-    animation:moveStars 40s linear infinite;
-    z-index:-1;
+    animation:stars 40s linear infinite;
+    z-index:-2;
 }
 
-@keyframes moveStars{
-    from{transform:translateY(0);}
-    to{transform:translateY(-200px);}
-}
-
-/* HEADER */
-.hero{
-    min-height:100vh;
-    padding:40px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
+@keyframes stars{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-300px);
+    }
 }
 
 .glow{
-    position:absolute;
-    width:600px;
-    height:600px;
-    background:radial-gradient(circle,#ff880050,transparent 70%);
-    filter:blur(50px);
-    animation:pulse 4s infinite;
-}
-
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
-    100%{transform:scale(1);}
-}
-
-.card{
-    width:100%;
-    max-width:430px;
-    background:linear-gradient(180deg,#111,#050505);
-    border:2px solid rgba(255,166,0,.4);
-    border-radius:35px;
-    padding:25px;
-    position:relative;
-    overflow:hidden;
-    box-shadow:
-    0 0 40px rgba(255,136,0,.35),
-    inset 0 0 25px rgba(255,136,0,.12);
-    animation:cardFloat 5s ease-in-out infinite;
-}
-
-@keyframes cardFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-}
-
-.top-badge{
-    display:inline-block;
-    padding:8px 18px;
-    background:linear-gradient(90deg,#ff9900,#ff5500);
-    color:#fff;
-    font-weight:700;
-    border-radius:50px;
-    margin-bottom:20px;
-    font-size:13px;
-    letter-spacing:2px;
-    box-shadow:0 0 15px #ff9900;
-}
-
-.title-small{
-    text-align:center;
-    letter-spacing:8px;
-    color:#ffc06a;
-    margin-bottom:20px;
-    font-size:15px;
-}
-
-.big-number{
-    text-align:center;
-    font-size:140px;
-    font-weight:900;
-    line-height:1;
-    background:linear-gradient(#ffd36e,#ff7b00);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    text-shadow:0 0 30px rgba(255,136,0,.5);
-    animation:zoomGlow 2s infinite alternate;
-}
-
-@keyframes zoomGlow{
-    from{
-        transform:scale(1);
-        filter:drop-shadow(0 0 10px #ff9900);
-    }
-    to{
-        transform:scale(1.03);
-        filter:drop-shadow(0 0 25px #ff6600);
-    }
-}
-
-.main-title{
-    text-align:center;
-    font-family:'Cinzel',serif;
-    font-size:58px;
-    font-weight:900;
-    margin-top:10px;
-    color:#ffb347;
-    text-shadow:0 0 20px rgba(255,136,0,.8);
-}
-
-.sub{
-    text-align:center;
-    margin-top:20px;
-    font-family:'Cinzel',serif;
-    line-height:1.5;
-    font-size:20px;
-    color:#fff0cf;
-    letter-spacing:4px;
-}
-
-/* QUEUE */
-.queue-box{
-    margin-top:35px;
-    padding:30px 20px;
-    border-radius:30px;
-    background:linear-gradient(180deg,#0f0f0f,#050505);
-    border:1px solid rgba(255,170,0,.35);
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-}
-
-.queue-box::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,.08),
-    transparent
-    );
-    transform:translateX(-100%);
-    animation:shine 4s infinite;
-}
-
-@keyframes shine{
-    100%{
-        transform:translateX(100%);
-    }
-}
-
-.queue-title{
-    font-size:15px;
-    color:#ffbb66;
-    letter-spacing:3px;
-}
-
-.queue-number{
-    font-size:72px;
-    font-weight:900;
-    margin:10px 0;
-    color:#ff9900;
-    text-shadow:0 0 25px #ff7700;
-    animation:blink 1.5s infinite;
-}
-
-@keyframes blink{
-    50%{opacity:.7;}
-}
-
-.queue-text{
-    font-size:17px;
-    line-height:1.8;
-    color:#ddd;
-}
-
-/* TIMER */
-.timer{
-    margin-top:30px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-}
-
-.time-box{
-    background:#111;
-    border:1px solid rgba(255,166,0,.3);
-    border-radius:20px;
-    padding:15px 5px;
-    text-align:center;
-    box-shadow:0 0 15px rgba(255,136,0,.15);
-}
-
-.time-box h2{
-    font-size:28px;
-    color:#ffae00;
-}
-
-.time-box span{
-    font-size:11px;
-    letter-spacing:2px;
-    color:#ccc;
-}
-
-/* EVENT */
-.event{
-    margin-top:35px;
-    border-radius:30px;
-    overflow:hidden;
-    border:1px solid rgba(255,170,0,.3);
-}
-
-.event-top{
-    background:linear-gradient(90deg,#ff9900,#ff5500);
-    text-align:center;
-    padding:15px;
-    font-weight:800;
-    font-size:18px;
-    letter-spacing:2px;
-}
-
-.event-body{
-    padding:25px;
-    background:#0a0a0a;
-    text-align:center;
-}
-
-.event-date{
-    font-size:54px;
-    font-weight:900;
-    color:#ffae00;
-    margin-bottom:10px;
-}
-
-.event-location{
-    line-height:1.8;
-    font-size:18px;
-}
-
-/* SEAT */
-.layout{
-    margin-top:35px;
-}
-
-.layout img{
-    width:100%;
-    border-radius:25px;
-    border:2px solid rgba(255,170,0,.35);
-    box-shadow:0 0 25px rgba(255,136,0,.25);
-}
-
-/* BUTTON */
-.btn{
-    display:block;
-    width:100%;
-    margin-top:30px;
-    padding:18px;
-    border:none;
-    border-radius:50px;
-    background:linear-gradient(90deg,#ff9900,#ff5500);
-    color:#fff;
-    font-weight:800;
-    font-size:18px;
-    cursor:pointer;
-    transition:.4s;
-    box-shadow:0 0 25px rgba(255,136,0,.5);
-}
-
-.btn:hover{
-    transform:scale(1.03);
-    box-shadow:0 0 35px rgba(255,136,0,.8);
-}
-
-/* FOOTER */
-.footer{
-    text-align:center;
-    margin-top:30px;
-    color:#777;
-    font-size:12px;
-    line-height:1.8;
-}
-
-/* FLOATING */
-.floating{
     position:fixed;
-    width:14px;
-    height:14px;
-    background:#ff9900;
-    border-radius:50%;
-    box-shadow:0 0 15px #ff9900;
-    animation:floatUp 8s linear infinite;
-    opacity:.4;
+    width:800px;
+    height:800px;
+    background:radial-gradient(circle,#ff880020,transparent 70%);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    filter:blur(80px);
+    animation:glow 6s infinite;
+    z-index:-1;
 }
 
-@keyframes floatUp{
+@keyframes glow{
+    0%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+    50%{
+        transform:translate(-50%,-50%) scale(1.08);
+    }
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+}
+
+/* FLOATING PARTICLES */
+
+.particle{
+    position:fixed;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#ff9900;
+    box-shadow:0 0 15px #ff9900;
+    opacity:.5;
+    animation:float linear infinite;
+}
+
+@keyframes float{
     from{
-        transform:translateY(100vh) scale(0);
+        transform:translateY(120vh) scale(0);
     }
     to{
         transform:translateY(-120vh) scale(1.5);
     }
 }
 
-@media(max-width:480px){
+/* CONTAINER */
 
-.main-title{
-    font-size:48px;
+.container{
+    width:100%;
+    max-width:460px;
+    margin:auto;
+    padding:20px 15px 50px;
 }
 
-.big-number{
-    font-size:110px;
+/* CARD */
+
+.main-card{
+    background:linear-gradient(180deg,#0b0b0b,#050505);
+    border-radius:35px;
+    overflow:hidden;
+    border:2px solid rgba(255,166,0,.25);
+    box-shadow:
+    0 0 50px rgba(255,136,0,.25),
+    inset 0 0 30px rgba(255,136,0,.05);
 }
 
-.sub{
-    font-size:18px;
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    font-family:'Cinzel',serif;
+    font-size:15px;
+    line-height:1.5;
+    font-weight:800;
+    color:#ffbe74;
+}
+
+.nav-links{
+    display:flex;
+    gap:15px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.nav-links span{
+    color:#fff;
+}
+
+/* HERO */
+
+.hero{
+    padding:10px 20px 30px;
+    text-align:center;
+    position:relative;
+}
+
+.top-text{
+    letter-spacing:10px;
+    color:#ffbf75;
+    font-size:15px;
+}
+
+.hero-title{
+    margin-top:20px;
+    font-family:'Cinzel',serif;
+    line-height:1.1;
+}
+
+.hero-title .westlife{
+    font-size:72px;
+    font-weight:900;
+    background:linear-gradient(#fff2d2,#ff9d42);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 30px rgba(255,166,0,.35);
+}
+
+.hero-title .anniversary{
+    font-size:28px;
+    color:#ffe0b0;
+    letter-spacing:5px;
+}
+
+.hero-title .world{
+    margin-top:5px;
+    font-size:56px;
+    font-weight:800;
+    background:linear-gradient(#ffd87f,#ff7a00);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.number25{
+    margin-top:20px;
+    font-size:180px;
+    font-weight:900;
+    line-height:1;
+    background:linear-gradient(#fff2cf,#ff7800);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 40px rgba(255,136,0,.6);
+    animation:numberZoom 2s infinite alternate;
+}
+
+@keyframes numberZoom{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.03);
+    }
 }
 
 .event-date{
-    font-size:42px;
+    margin-top:15px;
+    font-family:'Cinzel',serif;
+    font-size:18px;
+    letter-spacing:3px;
+    color:#fff;
+}
+
+.location{
+    margin-top:8px;
+    font-family:'Cinzel',serif;
+    font-size:20px;
+    line-height:1.5;
+    color:#ffbe74;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:30px;
+}
+
+.time-box{
+    background:#111;
+    border:1px solid rgba(255,166,0,.25);
+    border-radius:18px;
+    padding:15px 5px;
+    box-shadow:0 0 15px rgba(255,136,0,.12);
+}
+
+.time-box h2{
+    font-size:34px;
+    color:#ffb347;
+}
+
+.time-box span{
+    font-size:11px;
+    color:#ccc;
+}
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:30px;
+}
+
+.btn{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:18px;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.btn-buy{
+    background:linear-gradient(90deg,#ff9900,#ff5500);
+    color:#fff;
+    box-shadow:0 0 25px rgba(255,136,0,.6);
+}
+
+.btn-seat{
+    background:#111;
+    border:1px solid rgba(255,166,0,.3);
+    color:#fff;
+}
+
+.btn-trailer{
+    background:#111;
+    border:1px solid rgba(255,166,0,.3);
+    color:#fff;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+/* FEATURES */
+
+.section{
+    padding:20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:15px;
+    letter-spacing:4px;
+    color:#ffbe74;
+    margin-bottom:20px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.feature{
+    background:#0d0d0d;
+    border:1px solid rgba(255,166,0,.18);
+    border-radius:20px;
+    padding:20px 15px;
+    text-align:center;
+    transition:.4s;
+}
+
+.feature:hover{
+    transform:translateY(-5px);
+    border-color:#ff9900;
+}
+
+.feature-icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.feature-title{
+    font-size:14px;
+    font-weight:700;
+    color:#ffbe74;
+}
+
+.feature-desc{
+    margin-top:6px;
+    font-size:12px;
+    color:#bbb;
+    line-height:1.6;
+}
+
+/* LIVE ACTIVITY */
+
+.activity-box{
+    background:#0c0c0c;
+    border:1px solid rgba(255,166,0,.18);
+    border-radius:25px;
+    padding:20px;
+    margin-top:10px;
+}
+
+.activity-title{
+    font-size:22px;
+    color:#ffbe74;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.activity{
+    background:#111;
+    border:1px solid rgba(255,166,0,.15);
+    border-radius:18px;
+    padding:15px;
+    margin-bottom:15px;
+}
+
+.activity:last-child{
+    margin-bottom:0;
+}
+
+.activity-name{
+    font-weight:700;
+    color:#fff;
+}
+
+.activity-ticket{
+    margin-top:5px;
+    color:#ffbe74;
+    font-size:14px;
+}
+
+.activity-time{
+    margin-top:8px;
+    font-size:12px;
+    color:#999;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:30px;
+    padding:25px;
+    border-top:1px solid rgba(255,166,0,.15);
+    text-align:center;
+}
+
+.footer-logo{
+    font-family:'Cinzel',serif;
+    font-size:22px;
+    color:#ffbe74;
+    font-weight:800;
+}
+
+.footer-desc{
+    margin-top:15px;
+    color:#bbb;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:480px){
+
+.hero-title .westlife{
+    font-size:58px;
+}
+
+.hero-title .world{
+    font-size:48px;
+}
+
+.number25{
+    font-size:140px;
 }
 
 }
+
 </style>
 </head>
 <body>
@@ -369,130 +448,246 @@ body::before{
 <div class="glow"></div>
 
 <!-- FLOATING PARTICLES -->
-<div class="floating" style="left:10%; animation-delay:0s;"></div>
-<div class="floating" style="left:30%; animation-delay:2s;"></div>
-<div class="floating" style="left:50%; animation-delay:4s;"></div>
-<div class="floating" style="left:70%; animation-delay:1s;"></div>
-<div class="floating" style="left:90%; animation-delay:5s;"></div>
+<div class="particle" style="left:10%; animation-duration:7s;"></div>
+<div class="particle" style="left:30%; animation-duration:10s;"></div>
+<div class="particle" style="left:50%; animation-duration:8s;"></div>
+<div class="particle" style="left:70%; animation-duration:12s;"></div>
+<div class="particle" style="left:90%; animation-duration:9s;"></div>
 
-<section class="hero">
+<div class="container">
 
-<div class="card">
+<div class="main-card">
 
-<div class="top-badge">
-🔥 ANDA DALAM ANTRIAN 🔥
-</div>
+<!-- NAVBAR -->
+<div class="navbar">
 
-<div class="title-small">
-25 YEARS OF HITS
-</div>
-
-<div class="big-number">
-25
-</div>
-
-<div class="main-title">
-WESTLIFE
-</div>
-
-<div class="sub">
+<div class="logo">
+WESTLIFE<br>
 THE ANNIVERSARY<br>
 WORLD TOUR
 </div>
 
-<div class="queue-box">
-<div class="queue-title">
-NOMOR ANTRIAN ANDA
-</div>
-
-<div class="queue-number" id="queue">
-0287
-</div>
-
-<div class="queue-text">
-Mohon jangan menutup halaman ini.<br>
-Sistem sedang memproses tiket Anda.
-</div>
-</div>
-
-<!-- TIMER -->
-<div class="timer">
-
-<div class="time-box">
-<h2 id="days">00</h2>
-<span>HARI</span>
-</div>
-
-<div class="time-box">
-<h2 id="hours">00</h2>
-<span>JAM</span>
-</div>
-
-<div class="time-box">
-<h2 id="minutes">00</h2>
-<span>MENIT</span>
-</div>
-
-<div class="time-box">
-<h2 id="seconds">00</h2>
-<span>DETIK</span>
+<div class="nav-links">
+<span>HOME</span>
+<span>EVENT</span>
+<span>SEAT PLAN</span>
+<span>TICKET</span>
 </div>
 
 </div>
 
-<!-- EVENT -->
-<div class="event">
+<!-- HERO -->
+<div class="hero">
 
-<div class="event-top">
-EVENT INFORMATION
+<div class="top-text">
+25 YEARS OF HITS
 </div>
 
-<div class="event-body">
+<div class="hero-title">
+
+<div class="westlife">
+WESTLIFE
+</div>
+
+<div class="anniversary">
+THE ANNIVERSARY
+</div>
+
+<div class="world">
+WORLD TOUR
+</div>
+
+</div>
+
+<div class="number25">
+25
+</div>
 
 <div class="event-date">
-23 JANUARY 2027
+SATURDAY, 23 JANUARY 2027
 </div>
 
-<div class="event-location">
-SABTU • GELORA BUNG KARNO<br>
-MAIN STADIUM
+<div class="location">
+GELORA BUNG KARNO MAIN STADIUM
+</div>
+
+<!-- COUNTDOWN -->
+<div class="countdown">
+
+<div class="time-box">
+<h2 id="days">236</h2>
+<span>DAYS</span>
+</div>
+
+<div class="time-box">
+<h2 id="hours">14</h2>
+<span>HOURS</span>
+</div>
+
+<div class="time-box">
+<h2 id="minutes">42</h2>
+<span>MINUTES</span>
+</div>
+
+<div class="time-box">
+<h2 id="seconds">57</h2>
+<span>SECONDS</span>
 </div>
 
 </div>
-</div>
 
-<!-- LAYOUT -->
-<div class="layout">
-<img src="493.jpg" alt="Seat Layout">
-</div>
+<!-- BUTTONS -->
+<div class="buttons">
 
-<button class="btn" onclick="joinNow()">
-MASUK KE PEMBELIAN TIKET
+<button class="btn btn-buy">
+🎫 BUY TICKET
 </button>
 
+<button class="btn btn-seat">
+🪑 VIEW SEAT PLAN
+</button>
+
+<button class="btn btn-trailer">
+▶ WATCH TRAILER
+</button>
+
+</div>
+
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+
+<div class="section-title">
+FEATURES
+</div>
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">🎫</div>
+<div class="feature-title">E-TICKET DIGITAL</div>
+<div class="feature-desc">
+Tiket QR Code Eksklusif
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">💳</div>
+<div class="feature-title">PEMBAYARAN AMAN</div>
+<div class="feature-desc">
+QRIS • Transfer • E-Wallet
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">⏳</div>
+<div class="feature-title">WAITING ROOM</div>
+<div class="feature-desc">
+Sistem Antrian Otomatis
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🔔</div>
+<div class="feature-title">LIVE NOTIFICATION</div>
+<div class="feature-desc">
+Pembelian Real Time
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- LIVE ACTIVITY -->
+<div class="section">
+
+<div class="activity-box">
+
+<div class="activity-title">
+🔴 LIVE ACTIVITY
+</div>
+
+<div class="activity">
+
+<div class="activity-name">
+Andi dari Jakarta
+</div>
+
+<div class="activity-ticket">
+baru saja membeli 2 tiket VIP
+</div>
+
+<div class="activity-time">
+2 menit yang lalu
+</div>
+
+</div>
+
+<div class="activity">
+
+<div class="activity-name">
+Siti dari Bandung
+</div>
+
+<div class="activity-ticket">
+baru saja membeli 1 tiket CAT 1A
+</div>
+
+<div class="activity-time">
+3 menit yang lalu
+</div>
+
+</div>
+
+<div class="activity">
+
+<div class="activity-name">
+Rudi dari Surabaya
+</div>
+
+<div class="activity-ticket">
+baru saja membeli 4 tiket CAT 2B
+</div>
+
+<div class="activity-time">
+5 menit yang lalu
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
-© WESTLIFE 25TH ANNIVERSARY WORLD TOUR<br>
-FULL ANIMATION PREMIUM VERSION
+
+<div class="footer-logo">
+WESTLIFE
+</div>
+
+<div class="footer-desc">
+Rayakan 25 tahun perjalanan musik Westlife bersama jutaan fans di konser paling spektakuler!
 </div>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 <script>
 
-/* RANDOM QUEUE */
-setInterval(()=>{
-    let num = Math.floor(Math.random()*9000)+1000;
-    document.getElementById('queue').innerHTML = num;
-},4000);
-
 /* COUNTDOWN */
+
 const targetDate = new Date("January 23, 2027 00:00:00").getTime();
 
-const countdown = setInterval(function(){
+setInterval(function(){
 
 const now = new Date().getTime();
+
 const distance = targetDate - now;
 
 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -507,26 +702,26 @@ document.getElementById("seconds").innerHTML = seconds;
 
 },1000);
 
-/* BUTTON */
-function joinNow(){
-    alert("🔥 SELAMAT! ANDA BERHASIL MASUK KE HALAMAN PEMBELIAN TIKET WESTLIFE 2027 🔥");
-}
+/* FLOATING PARTICLE GENERATOR */
 
-/* PARTICLE GENERATOR */
 setInterval(()=>{
-    const particle = document.createElement('div');
-    particle.classList.add('floating');
 
-    particle.style.left = Math.random()*100+'%';
-    particle.style.animationDuration = (Math.random()*5+5)+'s';
+const particle = document.createElement('div');
 
-    document.body.appendChild(particle);
+particle.classList.add('particle');
 
-    setTimeout(()=>{
-        particle.remove();
-    },10000);
+particle.style.left = Math.random()*100+'%';
 
-},1000);
+particle.style.animationDuration =
+(Math.random()*6+5)+'s';
+
+document.body.appendChild(particle);
+
+setTimeout(()=>{
+particle.remove();
+},12000);
+
+},1200);
 
 </script>
 
